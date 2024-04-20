@@ -1,0 +1,11 @@
+prefix=/Users/loke/Library/CloudStorage/Dropbox/Project/LLM Projects/LLM_MCQ_Generator/llmmcq
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+toolexeclibdir=${libdir}
+includedir=/Users/loke/Library/CloudStorage/Dropbox/Project/LLM Projects/LLM_MCQ_Generator/llmmcq/include
+
+Name: libffi
+Description: Library supporting Foreign Function Interfaces
+Version: 3.4.4
+Libs: -L${toolexeclibdir} -lffi
+Cflags: -I${includedir}
