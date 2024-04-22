@@ -35,16 +35,6 @@ Ensure your responses are structured as follows, using JSON format for clarity:
 {response_json}
 """
 
-# response_json_template = {
-#     "questions": [
-#         {
-#             "question": "What is the capital of France?",
-#             "options": ["a. Paris", "b. London", "c. Rome", "d. Madrid"],
-#             "correct_option": "a"
-#         }
-#     ]
-# }
-
 #input prompt
 quiz_generation_prompt = PromptTemplate(
     input_variables=["text", "number", "subject", "tone",'response_json'],
@@ -74,10 +64,5 @@ quiz_evaluation_prompt = PromptTemplate(
 quiz_review_chain = LLMChain(llm= llm, prompt=quiz_evaluation_prompt, verbose=True, output_key='quiz_review')
 
 
-#Final chain combining bothe hte chain s 
+#Final chain combining bothe hte chains 
 final_chain = SequentialChain(chains=[quiz_generator_chain,quiz_review_chain], input_variables=["text", "number", "subject", "tone",'response_json'],output_variables=['quiz_questions','quiz_review'],verbose=True)
-
-
-
-
-
