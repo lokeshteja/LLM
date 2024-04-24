@@ -20,7 +20,7 @@ from src.mcqgenerator.utils import read_file,get_table_data
 #Load environment variables 
 load_dotenv()
 #get the key stored in .env file 
-KEY = os.getenv('OPENAI_API_KEY ')
+KEY = os.getenv('OPENAI_API_KEY')
 
 #get the model  that 
 llm = ChatOpenAI(model_name = "gpt-3.5-turbo",api_key=KEY)
